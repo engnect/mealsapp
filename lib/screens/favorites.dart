@@ -18,6 +18,7 @@ class _FavoritesState extends ConsumerState<Favorites> {
         appBar: AppBar(
           title: const Text('Favoriler'),
         ),
+        // Tasarım verilecek.
         body: ListView.builder(
           itemBuilder: (context, index) => Text(favorites[index].name),
           itemCount: favorites.length,
