@@ -34,10 +34,40 @@ class _MealDetailsState extends ConsumerState<MealDetails> {
       ),
       body: Column(
         children: [
-          Text(widget.meal.name),
-          Text(widget.meal.rating.toString()),
-          Image.network(widget.meal.imageUrl),
-          Text(widget.meal.ingredients.toList().toString()),
+          const Divider(
+            color: Color.fromARGB(255, 38, 30, 23),
+          ),
+          Text(
+            "Puanı ${widget.meal.rating.toString()}",
+            style: const TextStyle(
+                fontWeight: FontWeight.w700,
+                fontSize: 18,
+                fontFamily: "Montserrat"),
+          ),
+          Padding(
+            padding: const EdgeInsets.fromLTRB(8, 8, 8, 16),
+            child: Image.network(widget.meal.imageUrl),
+          ),
+          const Text(
+            "Malzemeler",
+            style: TextStyle(
+                fontWeight: FontWeight.w600,
+                fontSize: 32,
+                fontFamily: "Montserrat"),
+          ),
+          const Divider(
+            color: Color.fromARGB(255, 38, 30, 23),
+            indent: 25,
+            endIndent: 25,
+          ),
+          Text(
+            widget.meal.ingredients.toList().join('\n'),
+            style: const TextStyle(
+                fontWeight: FontWeight.w600,
+                fontSize: 16,
+                fontFamily: "Montserrat"),
+            textAlign: TextAlign.center,
+          ),
         ],
       ),
     );

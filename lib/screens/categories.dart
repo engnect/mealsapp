@@ -29,11 +29,12 @@ class Categories extends StatelessWidget {
         actions: [
           // Favoriler sayfasına geçiş yapsın.
           IconButton(
+              color: const Color.fromARGB(255, 203, 19, 2),
               onPressed: () {
                 Navigator.of(context).push(MaterialPageRoute(
                     builder: ((context) => const Favorites())));
               },
-              icon: const Icon(Icons.favorite))
+              icon: const Icon(Icons.favorite)),
         ],
       ),
       // Inkwell, GestureDetector
